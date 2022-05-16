@@ -1,8 +1,8 @@
-<%
-  if(session.getAttribute("name")== null){
-      response.sendRedirect("index.jsp");
-  }
-%>
+<%-- 
+    Document   : home
+    Created on : 16/05/2022, 16:48:30
+    Author     : serve-l
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
