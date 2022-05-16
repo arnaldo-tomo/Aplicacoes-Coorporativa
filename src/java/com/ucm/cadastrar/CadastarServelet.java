@@ -40,6 +40,7 @@ public class CadastarServelet extends HttpServlet {
             out.println("<title>Servlet CadastarServelet</title>");            
             out.println("</head>");
             out.println("<body>");
+            out.println("<jzgflsdgfsdglf;sdghfs");
             out.println("<h1>Servlet CadastarServelet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
