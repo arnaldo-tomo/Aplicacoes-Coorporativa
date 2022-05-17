@@ -38,12 +38,12 @@ public class CadastarServelet extends HttpServlet {
         Connection con = null;
 
         //teste..
-        //PrintWriter out = response.getWriter();
+        //PrintWriter out = response.getWriter(); 
         //out.print(name);
         //out.print(password);
         try {
             Class.forName("com.mysqli.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql:localhost:3306/Aplicaoes", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Aplicaoes", "root", "");
             PreparedStatement pst = con.prepareStatement("INSERT INTO usuario(nome,email,cargo,password,contacto) VALUES (?,?,?,?,?) ");
             pst.setString(1, name);
             pst.setString(2, email);
