@@ -111,19 +111,80 @@
             <div class="section-wrapper">
 
                 <label class="section-title">Criar Usario</label>
+
                 <div class="col-sm-12 col-md-2 float-right">
-
-
-                    <button class="btn btn-primary btn-block mg-b-10"><i class="fa fa-plus-text-o mg-r-5"></i> +
+                    <a href="#modaldemo8" class="modal-effect btn btn-primary btn-block" data-toggle="modal"
+                        data-effect="effect-super-scaled">
+                        <i class="fa fa-file-text-o mg-r-5"></i> +
                         Criar</button>
+                    </a>
                 </div><!-- col-sm-3 -->
+                <br>
 
 
                 <!-- modal -->
 
 
 
+                <!-- MODAL EFFECTS -->
+                <div id="modaldemo8" class="modal fade">
 
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content tx-size-sm">
+                            <div class="modal-header pd-x-25">
+                                <h6 class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold">Message Preview</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h5 class=" lh-3 mg-b-20">
+                                    Ola,Preencha os
+                                    campos..............................................................................
+                                    ........................................................
+                                </h5>
+                                <form method="post" action="CadastarServelet" data-parsley-validate>
+                                    <div class="wd-300">
+                                        <div class="d-md-flex mg-b-30">
+
+                                            <div class="form-group mg-b-0">
+                                                <label>nome: <span class="tx-danger">*</span></label>
+                                                <input type="text" name="name" class="form-control wd-250"
+                                                    placeholder="Username" required>
+                                                <label>Email: <span class="tx-danger">*</span></label>
+                                                <input type="text" name="email" class="form-control wd-250"
+                                                    placeholder="Email" required>
+                                            </div>
+                                            <!-- form-group -->
+                                            <div class="form-group mg-b-0 mg-md-l-20 mg-t-20 mg-md-t-0">
+                                                <label>Cargo: <span class="tx-danger">*</span></label>
+                                                <input type="text" name="cargo" class="form-control wd-250"
+                                                    placeholder="Cargo" required>
+                                                <label>Password: <span class="tx-danger">*</span></label>
+                                                <input type="password" name="password" class="form-control wd-250"
+                                                    placeholder="Password" required>
+                                            </div><!-- form-group -->
+                                            <div class="form-group mg-b-0 mg-md-l-20 mg-t-20 mg-md-t-0">
+
+                                                <label>Contacto: <span class="tx-danger">*</span></label>
+                                                <input type="text" name="contacto" class="form-control wd-250"
+                                                    placeholder="contacto" required>
+                                            </div><!-- form-group -->
+
+                                        </div><!-- d-flex -->
+                                        <button type="submit" class="btn btn-primary pd-x-20">CRIAR</button>
+                                    </div>
+                                </form>
+
+                            </div><!-- modal-body -->
+                            <!-- <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div> -->
+                        </div>
+                    </div><!-- modal-dialog -->
+
+                </div><!-- modal -->
 
                 <!-- Modal -->
                 <div class="table-wrapper">
@@ -618,7 +679,8 @@
     <script src="lib/datatables/js/jquery.dataTables.js"></script>
     <script src="lib/datatables-responsive/js/dataTables.responsive.js"></script>
     <script src="lib/select2/js/select2.min.js"></script>
-
+    <script src="../lib/jquery/js/jquery.js"></script>
+    <script src="lib/jquery.cookie/js/jquery.cookie.js"></script>
     <script src="js/slim.js"></script>
     <script>
         $(function () {
@@ -643,7 +705,25 @@
             $('.dataTables_length select').select2({ minimumResultsForSearch: Infinity });
 
         });
+
+        $(function () {
+
+            // showing modal with effect
+            $('.modal-effect').on('click', function (e) {
+                e.preventDefault();
+                var effect = $(this).attr('data-effect');
+                $('#modaldemo8').addClass(effect);
+            });
+
+            // hide modal with effect
+            $('#modaldemo8').on('hidden.bs.modal', function (e) {
+                $(this).removeClass(function (index, className) {
+                    return (className.match(/(^|\s)effect-\S+/g) || []).join(' ');
+                });
+            });
+        });
     </script>
+
 </body>
 
 </html>

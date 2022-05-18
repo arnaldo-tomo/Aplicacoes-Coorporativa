@@ -25,6 +25,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CadastarServelet", urlPatterns = {"/CadastarServelet"})
 public class CadastarServelet extends HttpServlet {
 
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,13 +44,17 @@ public class CadastarServelet extends HttpServlet {
         RequestDispatcher dispatcher = null;
         Connection con = null;
 
-        //teste..
-        //PrintWriter out = response.getWriter(); 
-        //out.print(name);
-        //out.print(password);
+        //teste..;;;;;;;
+        PrintWriter out = response.getWriter(); 
+        out.print(name);
+        out.print(email);
+        out.print(cargo);
+        out.print(password);
+        out.print(contacto);
+       
         try {
             Class.forName("com.mysqli.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Aplicaoes", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/java", "root", "");
             PreparedStatement pst = con.prepareStatement("INSERT INTO usuario(nome,email,cargo,password,contacto) VALUES (?,?,?,?,?) ");
             pst.setString(1, name);
             pst.setString(2, email);
