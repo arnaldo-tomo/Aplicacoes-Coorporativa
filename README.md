@@ -1,7 +1,1 @@
-# Aplicacoes-Coorporativa
-
-#Mario = creat data base and use case
-
-#Foo = creat FONT  and 
-
-#Mauro and me = we make a all back and 
+Um sistema de folha de pagamento abrange tudo o que entra no onboarding e pagando seus funcionários pelo trabalho que fizeram. Um sistema de folha de pagamento pode incluir: Rastrear horas de trabalho dos funcionários
